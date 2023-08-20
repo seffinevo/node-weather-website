@@ -18,9 +18,8 @@ const forecast = (latitude, longitude, callback) => {
             const temperature = body.current.temperature;
             const humidity = body.current.humidity;
             const weatherDescription = body.current.weather_descriptions[0];
-            const location = body.location.name;
-            const country = body.location.country; 
-            callback(undefined, `${weatherDescription}. It is now ${temperature} degrees outside in ${location}, ${country}. Humidity is ${humidity} percent.`)
+            const time = body.current.observation_time;
+            callback(undefined, `${weatherDescription}. It is now ${time} and the temperature is ${temperature} degrees. Humidity is ${humidity} percent.`)
         }
     })
 }
