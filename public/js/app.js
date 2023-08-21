@@ -13,7 +13,7 @@ weatherForm.addEventListener('submit', (e) => {
     messageOne.textContent = 'Loading...'
     messageTwo.textContent = ''
 
-    fetch('http://weak-pear-squid-hem.cyclic.cloud/weather?address=' + location).then((response) => {
+    fetch('https://weak-pear-squid-hem.cyclic.cloud/weather?address=' + location).then((response) => {
         response.json().then((data) => {
             if (data.error) {
                 return messageOne.textContent = data.error
